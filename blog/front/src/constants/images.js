@@ -1,7 +1,7 @@
-const images = {
+/*const images = {
 	Logo,
 	HeroImage,
 	Post1Image,
 };
 
-export default Images
+export default Images*/

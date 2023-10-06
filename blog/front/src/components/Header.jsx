@@ -1,7 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
 import{ AiOutlineMenu,AiOutlineClose } from "react-icons/ai"
-import { images } from "../constants";
+//import { images } from "../constants";
 
 const navItemsInfo = [
   { name: "Home" },
