@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import{ AiOutlineMenu,AiOutlineClose } from "react-icons/ai"
-import { Link, useNavigate } from "react-router-dom";
+//import { Link, useNavigate } from "react-router-dom";
 //import { images } from "../constants";
 
 const navItemsInfo = [
@@ -23,7 +23,6 @@ const NavItem = ({ name }) => {
 
 const Header = () => {
   const [navIsVisible, setNavIsVisible] = useState(false);
-  const navigate = useNavigate();
 
   const navVisibilityHandler = () => {
     setNavIsVisible((curState) => {
