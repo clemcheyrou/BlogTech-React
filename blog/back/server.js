@@ -23,6 +23,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes);
+
 
 app.use(invalidPathHandler);
 app.use(erroResponserHandler);
