@@ -46,7 +46,7 @@ function Hero() {
 		</div>
 
 		<div className="hidden lg:block lg:1/2">
-			<img  className="w-full" src="{images.HeroImage}" alt="Hero img" />
+			<img  className="w-full" src="" alt="Hero img" />
 		</div>
 
 		</section>

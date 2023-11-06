@@ -1,7 +1,9 @@
-/*const images = {
-	Logo,
-	HeroImage,
-	Post1Image,
+const samplePostImage = "images/sample.jpg";
+const userImage = "images/user.png";
+
+const images = {
+  samplePostImage,
+  userImage,
 };
 
-export default Images*/
+export default images;
