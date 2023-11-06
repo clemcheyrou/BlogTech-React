@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import { generateHTML } from "@tiptap/html";
+import Bold from '@tiptap/extension-bold';
+import parse from 'html-react-parser';
+
 import BreadCrumbs from "../../components/BreadCrumbs";
 import CommentsContainer from "../../components/comments/CommentsContainer";
 import MainLayout from "../../components/MainLayout";
@@ -12,7 +16,6 @@ import { getAllPosts, getSinglePost } from "../../services/index/posts";
 import ArticleDetailSkeleton from "./components/ArticleDetailSkeleton";
 import ErrorMessage from "../../components/ErrorMessage";
 import { useSelector } from "react-redux";
-import Editor from "../../components/editor/Editor";
 
 const ArticleDetailPage = () => {
   const { slug } = useParams();
@@ -29,7 +32,9 @@ const ArticleDetailPage = () => {
         { name: "Blog", link: "/blog" },
         { name: "Article title", link: `/blog/${data.slug}` },
       ]);
-    },
+      setBody(parse(generateHTML(data?.body, [Bold]))
+  );
+  },
   });
 
   const { data: postsData } = useQuery({
@@ -69,11 +74,6 @@ const ArticleDetailPage = () => {
             <h1 className="text-xl font-medium font-roboto mt-4 text-dark-hard md:text-[26px]">
               {data?.title}
             </h1>
-            <div className="w-full">
-              {!isLoading && !isError && (
-                <Editor content={data?.body} editable={false} />
-              )}
-            </div>
             <CommentsContainer
               comments={data?.comments}
               className="mt-10"
